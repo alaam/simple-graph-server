@@ -25,6 +25,28 @@ npm install
 } 
 ```
 
+#Loading the data
+This code doesn't load data into the service yet (will do it soon). But you can easily add the data using bulkload API. Alternatively, you can just load the sample data from the service UI on Bluemix.
+
+Here's a sample of loading a graphml file
+
+```
+var bulkUploadOpts = {
+    method: 'POST',
+    headers: {'Authorization': sessionToken},
+    uri: apiURL + '/bulkload/graphml',
+    formData: {
+      'graphml': fs.createReadStream(__dirname +  
+          '/../public/sample_graphml.xml'),
+      'type': 'application/xml'
+    }
+};
+request(bulkUploadOpts).then(function (body){
+    console.log('Our file was uploaded and the result was : ' +
+        JSON.stringify(body.result.data[0]));
+});
+```
+
 #Start the server
 ```
 npm start
