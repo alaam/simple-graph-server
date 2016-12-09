@@ -52,3 +52,9 @@ request(bulkUploadOpts).then(function (body){
 npm start
 ```
 
+#Trying the samples
+##Linkurious
+- start your browser and browse to `http://localhost:3005/basic.html`
+- Enter a gremlin query and hit the `Show` button 
+![Linkurious Graph](Linkurious graph.png?raw=true "Linkurious Graph")
+
